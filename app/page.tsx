@@ -216,6 +216,8 @@ Provide:
 - Full article structure (intro, section headings, conclusion) (English only)
 - A complete blog draft text in English and German
 - Graphic idea / header visual idea for the blog article (English only)
+- Meta title (EN + DE, max. ~60 characters)
+- Meta description (EN + DE, max. ~155 characters)
 
 Requirements:
 - The blog must be written as a real, high-quality article, not as notes or bullet points
@@ -233,6 +235,22 @@ Requirements:
 - The format should match the topic and feel natural, not forced
 - The blog draft must be long enough to be usable as a real first draft
 - The structure must still be clearly visible so editors can either use the outline or the full text
+
+- Optimize the blog for SEO without making it sound artificial
+- Include a clear primary keyword based on the topic input
+- Naturally integrate the keyword into:
+  • the title
+  • the introduction
+  • at least one subheading
+  • the body text
+- Use related terms and variations where relevant
+- The article should follow basic SEO structure:
+  • strong introduction with context and relevance
+  • clear subheadings (H2-style sections)
+  • scannable paragraphs (not overly long)
+  • a clear conclusion
+- Write in a way that answers a real search intent, not just promotes a product
+- Avoid keyword stuffing or unnatural repetition
 
 5. Cohesion Explanation
 - 2–3 sentences on how the LinkedIn posts, Instagram pieces and blog article work together as one weekly theme
@@ -305,6 +323,10 @@ Only include fields listed below.
   "blog_text_en": "",
   "blog_text_de": "",
   "blog_graphic_idea": "",
+  "meta_title_en": "",
+"meta_title_de": "",
+"meta_description_en": "",
+"meta_description_de": "",
   "cohesion_explanation": ""
 }
 
