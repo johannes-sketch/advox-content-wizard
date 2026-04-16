@@ -299,6 +299,10 @@ Rules:
 - Escape line breaks properly
 - Do not include a week field
 - Only actual published text fields need EN + DE; supporting fields stay in English
+- Do NOT reference earlier sections (e.g. "see above", "see full text above")
+- Every field must be fully self-contained
+- The blog_text_en and blog_text_de fields must contain the COMPLETE article text
+- Never shorten or summarize blog text inside JSON
 
 === QUALITY BAR ===
 - Make it specific, not generic
