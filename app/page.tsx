@@ -68,15 +68,15 @@ Tone for advox:
 - Sound like someone who understands campaign operations, not generic SaaS marketing`;
 
 function getInputLabel(pot: string) {
-  if (pot === "case studies") return "Case study inputs";
-  if (pot === "features") return "Feature focus";
+  if (pot === "case studies") return "Case study input";
+  if (pot === "features") return "Feature input";
   if (pot === "use cases / workflows") return "Workflow / use case input";
   return "Topic input";
 }
 
 function getInputPlaceholder(pot: string) {
   if (pot === "case studies") {
-    return "Example: Client type: media agency. Problem before advox: feedback in email + Slack. Main change: faster approvals, clearer versioning, better client visibility. Relevant feature: preview links + audit trail. Outcome: less coordination, more transparency.";
+    return "Example: Client type: media agency. Situation before advox: feedback in email + Slack. Main change: faster approvals, clearer versioning, better client visibility. Relevant feature: preview links + audit trail. Outcome: less coordination, more transparency.";
   }
   if (pot === "features") {
     return "Example: Focus on approvals. Main point: clients can review and approve via secure preview link without creating an account. Versions are locked, feedback stays on the asset, audit trail is clear.";
@@ -92,6 +92,7 @@ export default function Home() {
   const [pot, setPot] = useState("pain points");
   const [topicInput, setTopicInput] = useState("");
   const [angle, setAngle] = useState("provocative");
+  const [jsonInput, setJsonInput] = useState("");
 
   const prompt = useMemo(() => {
     return `You are a senior B2B content strategist for advox.
@@ -107,9 +108,13 @@ Angle: ${angle}
 === YOUR JOB ===
 Create one coherent weekly cross-channel content package for advox.
 The output must be directly usable by a marketing team without additional ideation.
-This means: do not only provide outlines or ideas. Always provide finished draft copy for every content piece.
-All content must be delivered in English and German.
-Every content piece must also include an idea for the graphic or visual execution.
+This means: do not only provide outlines or ideas. Always provide finished draft copy for every content piece that is meant to be published.
+
+=== LANGUAGE RULES ===
+- Only the actual postable copy must be bilingual (EN + DE)
+- This includes: LinkedIn hooks, LinkedIn post copy, LinkedIn CTAs, Instagram on-image text, Instagram captions, Instagram story text, blog titles, and full blog article drafts
+- Everything else may be written in English only
+- This includes: rationales, cohesion explanation, graphic ideas, why-it-works notes, format notes, structure notes
 
 === CONTENT LOGIC ===
 - All content pieces must connect back to the same weekly theme
@@ -138,7 +143,7 @@ Every content piece must also include an idea for the graphic or visual executio
 1. Weekly Theme Summary
 - 2–3 sentences explaining the focus of the week
 - explain why this theme matters for the target audience
-- provide both English and German
+- English only is fine
 
 2. LinkedIn Content
 Create 2 finished LinkedIn posts.
@@ -147,8 +152,8 @@ For each post, provide:
 - Hook (EN + DE)
 - Finished post copy (EN + DE)
 - CTA (EN + DE)
-- Graphic idea / visual execution
-- Short note on why this post works
+- Graphic idea / visual execution (English only)
+- Short note on why this post works (English only)
 
 Requirements:
 - Post 1 should be more opinion-driven or perspective-led
@@ -160,36 +165,36 @@ Create the following Instagram package:
 
 A. Blog-link story
 Provide:
-- Story goal
+- Story goal (English only)
 - On-story text (EN + DE)
 - Story CTA / sticker text (EN + DE)
-- Graphic idea / visual execution
-- Short note on why this story works
+- Graphic idea / visual execution (English only)
+- Short note on why this story works (English only)
 
 B. Theme A post
 Provide:
-- Format
+- Format (English only)
 - On-image text if relevant (EN + DE)
 - Finished caption (EN + DE)
-- Graphic idea / visual execution
-- Short note on why this piece works on Instagram
+- Graphic idea / visual execution (English only)
+- Short note on why this piece works on Instagram (English only)
 
 C. Theme A story extension
 This must be a matching story version of Theme A.
 Provide:
-- Story goal
+- Story goal (English only)
 - On-story text (EN + DE)
 - Story CTA / interaction idea (EN + DE)
-- Graphic idea / visual execution
-- Short note on why this story works
+- Graphic idea / visual execution (English only)
+- Short note on why this story works (English only)
 
 D. Theme B post
 Provide:
-- Format
+- Format (English only)
 - On-image text if relevant (EN + DE)
 - Finished caption (EN + DE)
-- Graphic idea / visual execution
-- Short note on why this piece works on Instagram
+- Graphic idea / visual execution (English only)
+- Short note on why this piece works on Instagram (English only)
 
 Requirements:
 - Theme A and Theme B should be different in angle or format
@@ -202,10 +207,10 @@ Create 1 blog package.
 Provide:
 - 3 possible blog titles (EN + DE)
 - 1 recommended final title (EN + DE)
-- Short rationale for the title choice
-- Full article structure (intro, section headings, conclusion)
+- Short rationale for the title choice (English only)
+- Full article structure (intro, section headings, conclusion) (English only)
 - A complete blog draft text in English and German
-- Graphic idea / header visual idea for the blog article
+- Graphic idea / header visual idea for the blog article (English only)
 
 Requirements:
 - The blog draft must be long enough to use as a real first draft
@@ -214,7 +219,86 @@ Requirements:
 
 5. Cohesion Explanation
 - 2–3 sentences on how the LinkedIn posts, Instagram pieces and blog article work together as one weekly theme
-- provide both English and German
+- English only is fine
+
+=== STRUCTURED OUTPUT FOR AUTOMATION ===
+After the full content package, also return one valid JSON object.
+Return JSON only in this exact structure and do not wrap it in markdown code fences.
+Only include fields listed below.
+
+{
+  "theme": "",
+  "weekly_theme_summary": "",
+  "linkedin_post_1_type": "",
+  "linkedin_post_1_hook_en": "",
+  "linkedin_post_1_hook_de": "",
+  "linkedin_post_1_copy_en": "",
+  "linkedin_post_1_copy_de": "",
+  "linkedin_post_1_cta_en": "",
+  "linkedin_post_1_cta_de": "",
+  "linkedin_post_1_graphic_idea": "",
+  "linkedin_post_1_why_it_works": "",
+  "linkedin_post_2_type": "",
+  "linkedin_post_2_hook_en": "",
+  "linkedin_post_2_hook_de": "",
+  "linkedin_post_2_copy_en": "",
+  "linkedin_post_2_copy_de": "",
+  "linkedin_post_2_cta_en": "",
+  "linkedin_post_2_cta_de": "",
+  "linkedin_post_2_graphic_idea": "",
+  "linkedin_post_2_why_it_works": "",
+  "instagram_blog_story_goal": "",
+  "instagram_blog_story_text_en": "",
+  "instagram_blog_story_text_de": "",
+  "instagram_blog_story_cta_en": "",
+  "instagram_blog_story_cta_de": "",
+  "instagram_blog_story_graphic_idea": "",
+  "instagram_blog_story_why_it_works": "",
+  "instagram_theme_a_post_format": "",
+  "instagram_theme_a_post_on_image_text_en": "",
+  "instagram_theme_a_post_on_image_text_de": "",
+  "instagram_theme_a_post_caption_en": "",
+  "instagram_theme_a_post_caption_de": "",
+  "instagram_theme_a_post_graphic_idea": "",
+  "instagram_theme_a_post_why_it_works": "",
+  "instagram_theme_a_story_goal": "",
+  "instagram_theme_a_story_text_en": "",
+  "instagram_theme_a_story_text_de": "",
+  "instagram_theme_a_story_cta_en": "",
+  "instagram_theme_a_story_cta_de": "",
+  "instagram_theme_a_story_graphic_idea": "",
+  "instagram_theme_a_story_why_it_works": "",
+  "instagram_theme_b_post_format": "",
+  "instagram_theme_b_post_on_image_text_en": "",
+  "instagram_theme_b_post_on_image_text_de": "",
+  "instagram_theme_b_post_caption_en": "",
+  "instagram_theme_b_post_caption_de": "",
+  "instagram_theme_b_post_graphic_idea": "",
+  "instagram_theme_b_post_why_it_works": "",
+  "blog_title_option_1_en": "",
+  "blog_title_option_1_de": "",
+  "blog_title_option_2_en": "",
+  "blog_title_option_2_de": "",
+  "blog_title_option_3_en": "",
+  "blog_title_option_3_de": "",
+  "blog_title_final_en": "",
+  "blog_title_final_de": "",
+  "blog_title_rationale": "",
+  "blog_outline": "",
+  "blog_text_en": "",
+  "blog_text_de": "",
+  "blog_graphic_idea": "",
+  "cohesion_explanation": ""
+}
+
+Rules:
+- Return one single valid JSON object
+- Do not use markdown
+- Do not add comments
+- Fill every field
+- Escape line breaks properly
+- Do not include a week field
+- Only actual published text fields need EN + DE; supporting fields stay in English
 
 === QUALITY BAR ===
 - Make it specific, not generic
@@ -222,74 +306,39 @@ Requirements:
 - Use real operational language
 - Show clear understanding of advox, its audiences and its differentiators
 - Make the finished copy feel like it could realistically be published by advox
-- Ensure all output is bilingual: English and German for every content piece
-- Ensure every content piece includes a concrete graphic or visual idea
+- Ensure graphic ideas are concrete enough for a designer to work from
 
-Now generate the full weekly content package.
-
-=== STRUCTURED OUTPUT FOR ZAPIER ===
-
-After the full content package, also return a valid JSON object.
-Return JSON only in this exact structure and do not wrap it in markdown code fences.
-
-{
-  "week": "",
-  "theme": "",
-  "linkedin_post_1_en": "",
-  "linkedin_post_1_de": "",
-  "linkedin_post_2_en": "",
-  "linkedin_post_2_de": "",
-  "instagram_blog_story_en": "",
-  "instagram_blog_story_de": "",
-  "instagram_theme_a_post_en": "",
-  "instagram_theme_a_post_de": "",
-  "instagram_theme_a_story_en": "",
-  "instagram_theme_a_story_de": "",
-  "instagram_theme_b_post_en": "",
-  "instagram_theme_b_post_de": "",
-  "blog_title_en": "",
-  "blog_title_de": "",
-  "blog_text_en": "",
-  "blog_text_de": ""
-}
-
-Rules:
-- Return one single valid JSON object
-- Do not use markdown
-- Do not add comments
-- Fill every field with final text
-- Keep line breaks inside values if useful`;
+Now generate the full weekly content package.`;
   }, [goal, pot, topicInput, angle]);
 
-function copyPrompt() {
-  navigator.clipboard.writeText(prompt);
-  window.open("https://chat.openai.com", "_blank");
-}
-
-async function sendJSONToZapier() {
-  try {
-    const response = await fetch("/api/send-to-zapier", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: jsonInput,
-    });
-
-    if (response.ok) {
-      alert("✅ Sent to Google Sheet!");
-      setJsonInput("");
-    } else {
-      alert("❌ Error sending");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("❌ Error sending");
+  function copyPrompt() {
+    navigator.clipboard.writeText(prompt);
+    alert("Prompt copied 🚀");
   }
-}
 
-const [jsonInput, setJsonInput] = useState("");
+  async function sendJSONToZapier() {
+    try {
+      JSON.parse(jsonInput);
 
+      const response = await fetch("/api/send-to-zapier", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonInput,
+      });
+
+      if (response.ok) {
+        alert("✅ Sent to Google Sheet!");
+        setJsonInput("");
+      } else {
+        alert("❌ Error sending");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ Invalid JSON or sending error");
+    }
+  }
 
   return (
     <main style={{ padding: 40, fontFamily: "Arial", maxWidth: 980, margin: "0 auto", lineHeight: 1.4 }}>
@@ -298,7 +347,20 @@ const [jsonInput, setJsonInput] = useState("");
         Build one weekly theme, generate one high-quality prompt, and use it in ChatGPT to create finished cross-channel content.
       </p>
 
+      <div style={{ background: "#f5f5f5", border: "1px solid #ddd", borderRadius: 12, padding: 18, marginBottom: 28 }}>
+        <strong>How to use this wizard</strong>
+        <ol style={{ marginTop: 12, marginBottom: 0, paddingLeft: 20 }}>
+          <li style={{ marginBottom: 8 }}><strong>Choose the weekly goal</strong> — decide whether this week is mainly about awareness, education, consideration or trust.</li>
+          <li style={{ marginBottom: 8 }}><strong>Choose the content theme</strong> — select the main topic bucket for the week.</li>
+          <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts ChatGPT should build on.</li>
+          <li style={{ marginBottom: 8 }}><strong>Choose the angle</strong> — decide how the content should feel, e.g. provocative, educational or comparison-based.</li>
+          <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into ChatGPT and generate the full package.</li>
+          <li><strong>Paste the JSON below</strong> — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”.</li>
+        </ol>
+      </div>
+
       <h2>1. Goal</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>Choose what this week should primarily achieve.</p>
       <div style={{ marginBottom: 24 }}>
         {goals.map((g) => (
           <button
@@ -322,6 +384,7 @@ const [jsonInput, setJsonInput] = useState("");
       </div>
 
       <h2>2. Content Theme</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>Choose the main topic bucket for the week.</p>
       <div style={{ marginBottom: 24 }}>
         {contentPots.map((p) => (
           <button
@@ -346,7 +409,7 @@ const [jsonInput, setJsonInput] = useState("");
 
       <h2>3. {getInputLabel(pot)}</h2>
       <p style={{ color: "#555", marginTop: 0 }}>
-        Add the key information ChatGPT should build the weekly content around. For most themes this can be one core insight. For case studies, use short bullet-style inputs.
+        Add the key information ChatGPT should build the weekly content around. For most themes this can be one core insight. For case studies, use short bullet-style facts.
       </p>
       <textarea
         value={topicInput}
@@ -365,6 +428,7 @@ const [jsonInput, setJsonInput] = useState("");
       />
 
       <h2>4. Angle</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>Choose the tone or storytelling angle for the week.</p>
       <div style={{ marginBottom: 30 }}>
         {angles.map((a) => (
           <button
@@ -388,6 +452,7 @@ const [jsonInput, setJsonInput] = useState("");
       </div>
 
       <h2>Generated Prompt</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>Copy this prompt into ChatGPT to generate the weekly content package plus the JSON block for automation.</p>
       <pre
         style={{
           background: "#f5f5f5",
@@ -418,35 +483,42 @@ const [jsonInput, setJsonInput] = useState("");
       >
         Copy Prompt
       </button>
-<textarea
-  placeholder="Paste JSON from ChatGPT here..."
-  value={jsonInput}
-  onChange={(e) => setJsonInput(e.target.value)}
-  style={{
-    width: "100%",
-    height: 150,
-    marginTop: 20,
-    padding: 10,
-    borderRadius: 10,
-    border: "1px solid #ccc",
-  }}
-/>
 
-<button
-  onClick={sendJSONToZapier}
-  style={{
-    padding: "14px 18px",
-    background: "green",
-    color: "white",
-    marginTop: 10,
-    borderRadius: 10,
-    border: "none",
-    cursor: "pointer",
-    fontSize: 15,
-  }}
->
-  Send JSON to Sheet 🚀
-</button>
+      <h2 style={{ marginTop: 36 }}>5. Paste JSON from ChatGPT</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>
+        Paste only the final JSON object from ChatGPT here. Do not include any explanatory text or markdown code fences.
+      </p>
+      <textarea
+        placeholder="Paste JSON from ChatGPT here..."
+        value={jsonInput}
+        onChange={(e) => setJsonInput(e.target.value)}
+        style={{
+          width: "100%",
+          height: 200,
+          marginTop: 10,
+          padding: 12,
+          borderRadius: 10,
+          border: "1px solid #ccc",
+          fontFamily: "monospace",
+          fontSize: 13,
+        }}
+      />
+
+      <button
+        onClick={sendJSONToZapier}
+        style={{
+          padding: "14px 18px",
+          background: "green",
+          color: "white",
+          marginTop: 10,
+          borderRadius: 10,
+          border: "none",
+          cursor: "pointer",
+          fontSize: 15,
+        }}
+      >
+        Send JSON to Sheet 🚀
+      </button>
     </main>
   );
 }
