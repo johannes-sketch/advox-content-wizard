@@ -261,35 +261,35 @@ Rules:
 - Keep line breaks inside values if useful`;
   }, [goal, pot, topicInput, angle]);
 
-  function copyPrompt() {
-    navigator.clipboard.writeText(prompt);
-    alert("Prompt copied 🚀");
-  }
+function copyPrompt() {
+  navigator.clipboard.writeText(prompt);
+  window.open("https://chat.openai.com", "_blank");
+}
 
-async function sendToZapier() {
+async function sendJSONToZapier() {
   try {
     const response = await fetch("https://hooks.zapier.com/hooks/catch/27244867/uj41a24/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        week: "Week X",
-        theme: pot,
-        prompt: prompt,
-      }),
+      body: jsonInput,
     });
 
     if (response.ok) {
-      alert("Sent to Zapier 🚀");
+      alert("✅ Sent to Google Sheet!");
+      setJsonInput("");
     } else {
-      alert("Something went wrong ❌");
+      alert("❌ Failed to send");
     }
   } catch (error) {
     console.error(error);
-    alert("Error sending to Zapier ❌");
+    alert("❌ Error sending");
   }
 }
+
+const [jsonInput, setJsonInput] = useState("");
+
 
   return (
     <main style={{ padding: 40, fontFamily: "Arial", maxWidth: 980, margin: "0 auto", lineHeight: 1.4 }}>
@@ -418,8 +418,22 @@ async function sendToZapier() {
       >
         Copy Prompt
       </button>
- <button
-  onClick={sendToZapier}
+<textarea
+  placeholder="Paste JSON from ChatGPT here..."
+  value={jsonInput}
+  onChange={(e) => setJsonInput(e.target.value)}
+  style={{
+    width: "100%",
+    height: 150,
+    marginTop: 20,
+    padding: 10,
+    borderRadius: 10,
+    border: "1px solid #ccc",
+  }}
+/>
+
+<button
+  onClick={sendJSONToZapier}
   style={{
     padding: "14px 18px",
     background: "green",
@@ -431,7 +445,7 @@ async function sendToZapier() {
     fontSize: 15,
   }}
 >
-  Send to Sheet 🚀
+  Send JSON to Sheet 🚀
 </button>
     </main>
   );
