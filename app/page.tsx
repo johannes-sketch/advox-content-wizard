@@ -225,7 +225,40 @@ Requirements:
 - Ensure all output is bilingual: English and German for every content piece
 - Ensure every content piece includes a concrete graphic or visual idea
 
-Now generate the full weekly content package.`;
+Now generate the full weekly content package.
+
+=== STRUCTURED OUTPUT FOR ZAPIER ===
+
+After the full content package, also return a valid JSON object.
+Return JSON only in this exact structure and do not wrap it in markdown code fences.
+
+{
+  "week": "",
+  "theme": "",
+  "linkedin_post_1_en": "",
+  "linkedin_post_1_de": "",
+  "linkedin_post_2_en": "",
+  "linkedin_post_2_de": "",
+  "instagram_blog_story_en": "",
+  "instagram_blog_story_de": "",
+  "instagram_theme_a_post_en": "",
+  "instagram_theme_a_post_de": "",
+  "instagram_theme_a_story_en": "",
+  "instagram_theme_a_story_de": "",
+  "instagram_theme_b_post_en": "",
+  "instagram_theme_b_post_de": "",
+  "blog_title_en": "",
+  "blog_title_de": "",
+  "blog_text_en": "",
+  "blog_text_de": ""
+}
+
+Rules:
+- Return one single valid JSON object
+- Do not use markdown
+- Do not add comments
+- Fill every field with final text
+- Keep line breaks inside values if useful`;
   }, [goal, pot, topicInput, angle]);
 
   function copyPrompt() {
