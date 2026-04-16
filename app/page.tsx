@@ -268,7 +268,7 @@ function copyPrompt() {
 
 async function sendJSONToZapier() {
   try {
-    const response = await fetch("https://hooks.zapier.com/hooks/catch/27244867/uj41a24/", {
+    const response = await fetch("/api/send-to-zapier", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -280,7 +280,7 @@ async function sendJSONToZapier() {
       alert("✅ Sent to Google Sheet!");
       setJsonInput("");
     } else {
-      alert("❌ Failed to send");
+      alert("❌ Error sending");
     }
   } catch (error) {
     console.error(error);
