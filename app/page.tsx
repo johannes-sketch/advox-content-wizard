@@ -399,7 +399,7 @@ Now generate the full weekly content package.`;
           <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts ChatGPT should build on.</li>
           <li style={{ marginBottom: 8 }}><strong>Choose the angle</strong> — decide how the content should feel, e.g. provocative, educational or comparison-based.</li>
           <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into ChatGPT and generate the full package.</li>
-          <li style={{ marginBottom: 8 }}><strong>Paste the JSON below</strong>< — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”./li>
+          <li style={{ marginBottom: 8 }}><strong>Paste the JSON below</strong> — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”.</li>
           <li><strong>Done!</strong> — Your content is available <a href="https://docs.google.com/spreadsheets/d/165Mz47DWJa--ZE4OnfJqlLcxcl2gUMHMzkIMVzIvdu8/edit?pli=1&gid=0#gid=0" target="_blank">in this spreadsheet</a>.</li>
         </ol>
       </div>
