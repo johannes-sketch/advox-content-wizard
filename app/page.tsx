@@ -266,7 +266,7 @@ Rules:
     alert("Prompt copied 🚀");
   }
 
-  async function sendToZapier() {
+async function sendToZapier() {
   try {
     const response = await fetch("https://hooks.zapier.com/hooks/catch/27244867/uj41a24/", {
       method: "POST",
@@ -276,7 +276,7 @@ Rules:
       body: JSON.stringify({
         week: "Week X",
         theme: pot,
-        prompt: prompt
+        prompt: prompt,
       }),
     });
 
@@ -418,7 +418,7 @@ Rules:
       >
         Copy Prompt
       </button>
-      <button
+ <button
   onClick={sendToZapier}
   style={{
     padding: "14px 18px",
