@@ -201,9 +201,14 @@ Requirements:
 - One of the two Instagram post themes must also exist as a story version (Theme A)
 - The blog-link story is always fixed and should point to the weekly blog article
 - All captions must be fully written and usable
+- You may use meme-style content where appropriate
+- Memes should still be relevant to advox topics (workflows, approvals, campaign chaos)
+- Keep meme formats simple, recognizable and platform-native
+- Avoid random humor — always tie back to a real pain point or insight
 
 4. Blog Content
 Create 1 blog package.
+
 Provide:
 - 3 possible blog titles (EN + DE)
 - 1 recommended final title (EN + DE)
@@ -213,9 +218,21 @@ Provide:
 - Graphic idea / header visual idea for the blog article (English only)
 
 Requirements:
-- The blog draft must be long enough to use as a real first draft
-- The structure should still be clearly visible so an editor can either use the outline or the full text
-- The blog should be useful, practical and not overly promotional
+- The blog must be written as a real, high-quality article, not as notes or bullet points
+- Use natural, flowing paragraphs with clear transitions between sections
+- Use subheadings to structure the article clearly
+- Avoid overly promotional or sales-heavy language
+- The article should feel like a useful, thoughtful industry piece
+
+- Consider well-known blog formats such as:
+  • list-based articles (e.g. “5 reasons why…”)
+  • experience-based formats (e.g. “we tried X and this is what happened”)
+  • breakdowns or analysis formats
+  • step-by-step explanations
+
+- The format should match the topic and feel natural, not forced
+- The blog draft must be long enough to be usable as a real first draft
+- The structure must still be clearly visible so editors can either use the outline or the full text
 
 5. Cohesion Explanation
 - 2–3 sentences on how the LinkedIn posts, Instagram pieces and blog article work together as one weekly theme
@@ -303,6 +320,7 @@ Rules:
 - Every field must be fully self-contained
 - The blog_text_en and blog_text_de fields must contain the COMPLETE article text
 - Never shorten or summarize blog text inside JSON
+- The JSON must be usable independently without any additional context
 
 === QUALITY BAR ===
 - Make it specific, not generic
