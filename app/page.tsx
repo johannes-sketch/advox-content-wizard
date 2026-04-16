@@ -266,6 +266,31 @@ Rules:
     alert("Prompt copied 🚀");
   }
 
+  async function sendToZapier() {
+  try {
+    const response = await fetch("https://hooks.zapier.com/hooks/catch/27244867/uj41a24/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        week: "Week X",
+        theme: pot,
+        prompt: prompt
+      }),
+    });
+
+    if (response.ok) {
+      alert("Sent to Zapier 🚀");
+    } else {
+      alert("Something went wrong ❌");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error sending to Zapier ❌");
+  }
+}
+
   return (
     <main style={{ padding: 40, fontFamily: "Arial", maxWidth: 980, margin: "0 auto", lineHeight: 1.4 }}>
       <h1 style={{ fontSize: 32, marginBottom: 8 }}>advox Content Wizard 🚀</h1>
@@ -393,6 +418,21 @@ Rules:
       >
         Copy Prompt
       </button>
+      <button
+  onClick={sendToZapier}
+  style={{
+    padding: "14px 18px",
+    background: "green",
+    color: "white",
+    marginTop: 10,
+    borderRadius: 10,
+    border: "none",
+    cursor: "pointer",
+    fontSize: 15,
+  }}
+>
+  Send to Sheet 🚀
+</button>
     </main>
   );
 }
