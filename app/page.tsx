@@ -108,6 +108,8 @@ Angle: ${angle}
 Create one coherent weekly cross-channel content package for advox.
 The output must be directly usable by a marketing team without additional ideation.
 This means: do not only provide outlines or ideas. Always provide finished draft copy for every content piece.
+All content must be delivered in English and German.
+Every content piece must also include an idea for the graphic or visual execution.
 
 === CONTENT LOGIC ===
 - All content pieces must connect back to the same weekly theme
@@ -115,6 +117,7 @@ This means: do not only provide outlines or ideas. Always provide finished draft
 - Adapt the same topic to the logic of each channel instead of repeating the same wording
 - Keep the language concrete and useful
 - Make the content feel grounded in real campaign work
+- The blog should act as the deeper anchor content of the week
 
 === STYLE & TONE ===
 - Clear, direct, no fluff
@@ -135,43 +138,74 @@ This means: do not only provide outlines or ideas. Always provide finished draft
 1. Weekly Theme Summary
 - 2–3 sentences explaining the focus of the week
 - explain why this theme matters for the target audience
+- provide both English and German
 
 2. LinkedIn Content
 Create 2 finished LinkedIn posts.
 For each post, provide:
 - Post type
-- Hook
-- Finished post copy
-- CTA
+- Hook (EN + DE)
+- Finished post copy (EN + DE)
+- CTA (EN + DE)
+- Graphic idea / visual execution
 - Short note on why this post works
 
 Requirements:
 - Post 1 should be more opinion-driven or perspective-led
-- Post 2 should be clearly different, e.g. more educational, comparison-based or practical
+- Post 2 must be a teaser for the blog article of the week and explicitly drive readers to the blog
 - The copy must be ready to post
 
 3. Instagram Content
-Create 2 finished Instagram content pieces.
-For each piece, provide:
+Create the following Instagram package:
+
+A. Blog-link story
+Provide:
+- Story goal
+- On-story text (EN + DE)
+- Story CTA / sticker text (EN + DE)
+- Graphic idea / visual execution
+- Short note on why this story works
+
+B. Theme A post
+Provide:
 - Format
-- Visual concept
-- On-image text if relevant
-- Finished caption
+- On-image text if relevant (EN + DE)
+- Finished caption (EN + DE)
+- Graphic idea / visual execution
+- Short note on why this piece works on Instagram
+
+C. Theme A story extension
+This must be a matching story version of Theme A.
+Provide:
+- Story goal
+- On-story text (EN + DE)
+- Story CTA / interaction idea (EN + DE)
+- Graphic idea / visual execution
+- Short note on why this story works
+
+D. Theme B post
+Provide:
+- Format
+- On-image text if relevant (EN + DE)
+- Finished caption (EN + DE)
+- Graphic idea / visual execution
 - Short note on why this piece works on Instagram
 
 Requirements:
-- One piece should be more relatable / social-first
-- One piece should be more educational / visual
-- The caption must be fully written and usable
+- Theme A and Theme B should be different in angle or format
+- One of the two Instagram post themes must also exist as a story version (Theme A)
+- The blog-link story is always fixed and should point to the weekly blog article
+- All captions must be fully written and usable
 
 4. Blog Content
 Create 1 blog package.
 Provide:
-- 3 possible blog titles
-- 1 recommended final title
+- 3 possible blog titles (EN + DE)
+- 1 recommended final title (EN + DE)
 - Short rationale for the title choice
 - Full article structure (intro, section headings, conclusion)
-- A complete blog draft text
+- A complete blog draft text in English and German
+- Graphic idea / header visual idea for the blog article
 
 Requirements:
 - The blog draft must be long enough to use as a real first draft
@@ -180,6 +214,7 @@ Requirements:
 
 5. Cohesion Explanation
 - 2–3 sentences on how the LinkedIn posts, Instagram pieces and blog article work together as one weekly theme
+- provide both English and German
 
 === QUALITY BAR ===
 - Make it specific, not generic
@@ -187,6 +222,8 @@ Requirements:
 - Use real operational language
 - Show clear understanding of advox, its audiences and its differentiators
 - Make the finished copy feel like it could realistically be published by advox
+- Ensure all output is bilingual: English and German for every content piece
+- Ensure every content piece includes a concrete graphic or visual idea
 
 Now generate the full weekly content package.`;
   }, [goal, pot, topicInput, angle]);
