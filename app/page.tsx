@@ -149,15 +149,13 @@ This means: do not only provide outlines or ideas. Always provide finished draft
 Create 2 finished LinkedIn posts.
 For each post, provide:
 - Post type
-- Hook (EN + DE)
 - Finished post copy (EN + DE)
-- CTA (EN + DE)
 - Graphic idea / visual execution (English only)
-- Short note on why this post works (English only)
 
 Requirements:
 - Post 1 should be more opinion-driven or perspective-led
 - Post 2 must be a teaser for the blog article of the week and explicitly drive readers to the blog
+- The hook and CTA should be naturally integrated into the finished post copy
 - The copy must be ready to post
 
 3. Instagram Content
@@ -165,11 +163,9 @@ Create the following Instagram package:
 
 A. Blog-link story
 Provide:
-- Story goal (English only)
 - On-story text (EN + DE)
 - Story CTA / sticker text (EN + DE)
 - Graphic idea / visual execution (English only)
-- Short note on why this story works (English only)
 
 B. Theme A post
 Provide:
@@ -177,16 +173,13 @@ Provide:
 - On-image text if relevant (EN + DE)
 - Finished caption (EN + DE)
 - Graphic idea / visual execution (English only)
-- Short note on why this piece works on Instagram (English only)
 
 C. Theme A story extension
 This must be a matching story version of Theme A.
 Provide:
-- Story goal (English only)
 - On-story text (EN + DE)
 - Story CTA / interaction idea (EN + DE)
 - Graphic idea / visual execution (English only)
-- Short note on why this story works (English only)
 
 D. Theme B post
 Provide:
@@ -194,7 +187,6 @@ Provide:
 - On-image text if relevant (EN + DE)
 - Finished caption (EN + DE)
 - Graphic idea / visual execution (English only)
-- Short note on why this piece works on Instagram (English only)
 
 Requirements:
 - Theme A and Theme B should be different in angle or format
@@ -208,14 +200,13 @@ Requirements:
 
 4. Blog Content
 Create 1 blog package.
-
 Provide:
-- 3 possible blog titles (EN + DE)
-- 1 recommended final title (EN + DE)
-- Short rationale for the title choice (English only)
-- Full article structure (intro, section headings, conclusion) (English only)
+- 1 recommended blog title (EN + DE)
+- Full article structure with clear subheadings and flowing sections in the main output
 - A complete blog draft text in English and German
 - Graphic idea / header visual idea for the blog article (English only)
+- Primary keyword (English only)
+- 5–8 SEO keywords / related search terms (English only)
 - Meta title (EN + DE, max. ~60 characters)
 - Meta description (EN + DE, max. ~155 characters)
 
@@ -225,17 +216,13 @@ Requirements:
 - Use subheadings to structure the article clearly
 - Avoid overly promotional or sales-heavy language
 - The article should feel like a useful, thoughtful industry piece
-
 - Consider well-known blog formats such as:
   • list-based articles (e.g. “5 reasons why…”)
   • experience-based formats (e.g. “we tried X and this is what happened”)
   • breakdowns or analysis formats
   • step-by-step explanations
-
 - The format should match the topic and feel natural, not forced
 - The blog draft must be long enough to be usable as a real first draft
-- The structure must still be clearly visible so editors can either use the outline or the full text
-
 - Optimize the blog for SEO without making it sound artificial
 - Include a clear primary keyword based on the topic input
 - Naturally integrate the keyword into:
@@ -251,12 +238,9 @@ Requirements:
   • a clear conclusion
 - Write in a way that answers a real search intent, not just promotes a product
 - Avoid keyword stuffing or unnatural repetition
+- The blog_text_en and blog_text_de fields in the JSON must contain the FULL article text (no references like “see above”)
 
-5. Cohesion Explanation
-- 2–3 sentences on how the LinkedIn posts, Instagram pieces and blog article work together as one weekly theme
-- English only is fine
-
-=== STRUCTURED OUTPUT FOR AUTOMATION ===
+5. Structured Output for Automation
 After the full content package, also return one valid JSON object.
 Return JSON only in this exact structure and do not wrap it in markdown code fences.
 Only include fields listed below.
@@ -265,69 +249,44 @@ Only include fields listed below.
   "theme": "",
   "weekly_theme_summary": "",
   "linkedin_post_1_type": "",
-  "linkedin_post_1_hook_en": "",
-  "linkedin_post_1_hook_de": "",
   "linkedin_post_1_copy_en": "",
   "linkedin_post_1_copy_de": "",
-  "linkedin_post_1_cta_en": "",
-  "linkedin_post_1_cta_de": "",
   "linkedin_post_1_graphic_idea": "",
-  "linkedin_post_1_why_it_works": "",
   "linkedin_post_2_type": "",
-  "linkedin_post_2_hook_en": "",
-  "linkedin_post_2_hook_de": "",
   "linkedin_post_2_copy_en": "",
   "linkedin_post_2_copy_de": "",
-  "linkedin_post_2_cta_en": "",
-  "linkedin_post_2_cta_de": "",
   "linkedin_post_2_graphic_idea": "",
-  "linkedin_post_2_why_it_works": "",
-  "instagram_blog_story_goal": "",
   "instagram_blog_story_text_en": "",
   "instagram_blog_story_text_de": "",
   "instagram_blog_story_cta_en": "",
   "instagram_blog_story_cta_de": "",
   "instagram_blog_story_graphic_idea": "",
-  "instagram_blog_story_why_it_works": "",
   "instagram_theme_a_post_format": "",
   "instagram_theme_a_post_on_image_text_en": "",
   "instagram_theme_a_post_on_image_text_de": "",
   "instagram_theme_a_post_caption_en": "",
   "instagram_theme_a_post_caption_de": "",
   "instagram_theme_a_post_graphic_idea": "",
-  "instagram_theme_a_post_why_it_works": "",
-  "instagram_theme_a_story_goal": "",
   "instagram_theme_a_story_text_en": "",
   "instagram_theme_a_story_text_de": "",
   "instagram_theme_a_story_cta_en": "",
   "instagram_theme_a_story_cta_de": "",
   "instagram_theme_a_story_graphic_idea": "",
-  "instagram_theme_a_story_why_it_works": "",
   "instagram_theme_b_post_format": "",
   "instagram_theme_b_post_on_image_text_en": "",
   "instagram_theme_b_post_on_image_text_de": "",
   "instagram_theme_b_post_caption_en": "",
   "instagram_theme_b_post_caption_de": "",
   "instagram_theme_b_post_graphic_idea": "",
-  "instagram_theme_b_post_why_it_works": "",
-  "blog_title_option_1_en": "",
-  "blog_title_option_1_de": "",
-  "blog_title_option_2_en": "",
-  "blog_title_option_2_de": "",
-  "blog_title_option_3_en": "",
-  "blog_title_option_3_de": "",
-  "blog_title_final_en": "",
-  "blog_title_final_de": "",
-  "blog_title_rationale": "",
-  "blog_outline": "",
+  "blog_title_en": "",
+  "blog_title_de": "",
+  "meta_title_en": "",
+  "meta_title_de": "",
+  "meta_description_en": "",
+  "meta_description_de": "",
   "blog_text_en": "",
   "blog_text_de": "",
-  "blog_graphic_idea": "",
-  "meta_title_en": "",
-"meta_title_de": "",
-"meta_description_en": "",
-"meta_description_de": "",
-  "cohesion_explanation": ""
+  "blog_graphic_idea": ""
 }
 
 Rules:
@@ -340,8 +299,7 @@ Rules:
 - Only actual published text fields need EN + DE; supporting fields stay in English
 - Do NOT reference earlier sections (e.g. "see above", "see full text above")
 - Every field must be fully self-contained
-- The blog_text_en and blog_text_de fields must contain the COMPLETE article text
-- Never shorten or summarize blog text inside JSON
+- blog_text_en and blog_text_de must contain the COMPLETE article text
 - The JSON must be usable independently without any additional context
 
 === QUALITY BAR ===
@@ -399,8 +357,7 @@ Now generate the full weekly content package.`;
           <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts ChatGPT should build on.</li>
           <li style={{ marginBottom: 8 }}><strong>Choose the angle</strong> — decide how the content should feel, e.g. provocative, educational or comparison-based.</li>
           <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into ChatGPT and generate the full package.</li>
-          <li style={{ marginBottom: 8 }}><strong>Paste the JSON below</strong> — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”.</li>
-          <li><strong>Done!</strong> — Your content is available <a href="https://docs.google.com/spreadsheets/d/165Mz47DWJa--ZE4OnfJqlLcxcl2gUMHMzkIMVzIvdu8/edit?pli=1&gid=0#gid=0" target="_blank">in this spreadsheet</a>.</li>
+          <li><strong>Paste the JSON below</strong> — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”.</li>
         </ol>
       </div>
 
