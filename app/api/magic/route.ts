@@ -15,7 +15,8 @@ export async function POST(req: Request) {
     const genAI = new GoogleGenerativeAI(apiKey);
 
 // Ändere von gemini-1.5-flash auf gemini-1.5-pro oder gemini-pro
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+// Wir nutzen "gemini-pro" als stabilen Ankerpunkt
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
     // API-Call mit Fehler-Details
     const result = await model.generateContent(prompt);
