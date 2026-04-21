@@ -288,6 +288,7 @@ Rules:
 - Do NOT reference earlier sections (e.g. "see above", "see full text above")
 - Every field must be fully self-contained
 - blog_text_en and blog_text_de must contain the COMPLETE article text
+- IMPORTANT: Use only single quotes (') for any quotes or emphasis within text values. Double quotes (") are strictly reserved for JSON keys and string boundaries.
 - The JSON must be usable independently without any additional context
 
 === QUALITY BAR ===
