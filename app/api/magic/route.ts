@@ -14,8 +14,8 @@ export async function POST(req: Request) {
 
     const genAI = new GoogleGenerativeAI(apiKey);
 
-    // Wir versuchen es mit der stabilen Bezeichnung
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// Ändere von gemini-1.5-flash auf gemini-1.5-pro oder gemini-pro
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     // API-Call mit Fehler-Details
     const result = await model.generateContent(prompt);
