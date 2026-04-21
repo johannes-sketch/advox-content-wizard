@@ -239,7 +239,7 @@ Requirements:
 - in german we don't use the formal address ("Sie") but the informal one ("du" or "ihr")
 
 5. Structured Output for Automation
-After the full content package, also return one valid JSON object.
+After the full content package, also return one valid JSON object that matches the exact output but only transforms it in structured JSON data.
 Return JSON only in this exact structure and do not wrap it in markdown code fences.
 Only include fields listed below.
 
@@ -278,6 +278,7 @@ Only include fields listed below.
 }
 
 Rules:
+- The texts in the JSON object should exactly match the texts you created for the content package. Do NOT make up new texts for the JSON object.
 - Return one single valid JSON object
 - Do not use markdown
 - Do not add comments
