@@ -344,8 +344,8 @@ Now generate the full weekly content package.`;
           <li style={{ marginBottom: 8 }}><strong>Choose the content theme</strong> — select the main topic bucket for the week.</li>
           <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts ChatGPT should build on.</li>
           <li style={{ marginBottom: 8 }}><strong>Choose the angle</strong> — decide how the content should feel, e.g. provocative, educational or comparison-based.</li>
-          <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into ChatGPT and generate the full package.</li>
-          <li><strong>Paste the JSON below</strong> — only paste the final JSON object from ChatGPT into the JSON field and click “Send JSON to Sheet”. You can find the sheet <a href="https://docs.google.com/spreadsheets/d/165Mz47DWJa--ZE4OnfJqlLcxcl2gUMHMzkIMVzIvdu8/edit?pli=1&gid=0#gid=0" target="_blank">here</a></li>
+          <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into a chat in the <a href="https://gemini.google.com/gem/1VR28ejEGvWqV9v-PDj5ZDH4JI0L38_Kf?usp=sharing" target="_blank">advox content creation gem</a> and generate the full package.</li>
+          <li><strong>Paste the JSON below</strong> — only paste the final JSON object from Gemini into the JSON field and click “Send JSON to Sheet”. You can find the sheet <a href="https://docs.google.com/spreadsheets/d/165Mz47DWJa--ZE4OnfJqlLcxcl2gUMHMzkIMVzIvdu8/edit?pli=1&gid=0#gid=0" target="_blank">here</a></li>
         </ol>
       </div>
 
