@@ -278,7 +278,7 @@ Only include fields listed below.
 }
 
 Rules:
-- The texts in the JSON object should exactly match the texts you created for the content package. Do NOT make up new texts for the JSON object.
+- The texts in the JSON object should exactly match the texts you created for the content package. Do NOT make up new texts for the JSON object. The weekly theme summary in the JSON object should also exactly match your weekly theme summary from the content package.
 - Return one single valid JSON object
 - Do not use markdown
 - Do not add comments
