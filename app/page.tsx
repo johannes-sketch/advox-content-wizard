@@ -334,7 +334,7 @@ Now generate the full weekly content package.`;
     <main style={{ padding: 40, fontFamily: "Arial", maxWidth: 980, margin: "0 auto", lineHeight: 1.4 }}>
       <h1 style={{ fontSize: 32, marginBottom: 8 }}>advox Content Wizard 🚀</h1>
       <p style={{ color: "#555", marginTop: 0, marginBottom: 30 }}>
-        Build one weekly theme, generate one high-quality prompt, and use it in ChatGPT to create finished cross-channel content.
+        Build one weekly theme, generate one high-quality prompt, and use it in Gemini to create finished cross-channel content.
       </p>
 
       <div style={{ background: "#f5f5f5", border: "1px solid #ddd", borderRadius: 12, padding: 18, marginBottom: 28 }}>
@@ -342,7 +342,7 @@ Now generate the full weekly content package.`;
         <ol style={{ marginTop: 12, marginBottom: 0, paddingLeft: 20 }}>
           <li style={{ marginBottom: 8 }}><strong>Choose the weekly goal</strong> — decide whether this week is mainly about awareness, education, consideration or trust.</li>
           <li style={{ marginBottom: 8 }}><strong>Choose the content theme</strong> — select the main topic bucket for the week.</li>
-          <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts ChatGPT should build on.</li>
+          <li style={{ marginBottom: 8 }}><strong>Add the topic input</strong> — write the core insight, feature focus, workflow idea or case-study facts Gemini should build on.</li>
           <li style={{ marginBottom: 8 }}><strong>Choose the angle</strong> — decide how the content should feel, e.g. provocative, educational or comparison-based.</li>
           <li style={{ marginBottom: 8 }}><strong>Copy the prompt</strong> — paste it into a chat in the <a href="https://gemini.google.com/gem/1VR28ejEGvWqV9v-PDj5ZDH4JI0L38_Kf?usp=sharing" target="_blank">advox content creation gem</a> and generate the full package.</li>
           <li><strong>Paste the JSON below</strong> — only paste the final JSON object from Gemini into the JSON field and click “Send JSON to Sheet”. You can find the sheet <a href="https://docs.google.com/spreadsheets/d/165Mz47DWJa--ZE4OnfJqlLcxcl2gUMHMzkIMVzIvdu8/edit?pli=1&gid=0#gid=0" target="_blank">here</a></li>
@@ -399,7 +399,7 @@ Now generate the full weekly content package.`;
 
       <h2>3. {getInputLabel(pot)}</h2>
       <p style={{ color: "#555", marginTop: 0 }}>
-        Add the key information ChatGPT should build the weekly content around. For most themes this can be one core insight. For case studies, use short bullet-style facts.
+        Add the key information Gemini should build the weekly content around. For most themes this can be one core insight. For case studies, use short bullet-style facts.
       </p>
       <textarea
         value={topicInput}
@@ -442,7 +442,7 @@ Now generate the full weekly content package.`;
       </div>
 
       <h2>Generated Prompt</h2>
-      <p style={{ color: "#555", marginTop: 0 }}>Copy this prompt into ChatGPT to generate the weekly content package plus the JSON block for automation.</p>
+      <p style={{ color: "#555", marginTop: 0 }}>Copy this prompt into Gemini to generate the weekly content package plus the JSON block for automation.</p>
       <pre
         style={{
           background: "#f5f5f5",
@@ -474,12 +474,12 @@ Now generate the full weekly content package.`;
         Copy Prompt
       </button>
 
-      <h2 style={{ marginTop: 36 }}>5. Paste JSON from ChatGPT</h2>
+      <h2 style={{ marginTop: 36 }}>5. Paste JSON from Gemini</h2>
       <p style={{ color: "#555", marginTop: 0 }}>
-        Paste only the final JSON object from ChatGPT here. Do not include any explanatory text or markdown code fences.
+        Paste only the final JSON object from Gemini here. Do not include any explanatory text or markdown code fences.
       </p>
       <textarea
-        placeholder="Paste JSON from ChatGPT here..."
+        placeholder="Paste JSON from Gemini here..."
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}
         style={{
